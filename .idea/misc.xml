@@ -4,7 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1045" />
+        <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.2335" />
+        <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2335" />
+        <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2335" />
         <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/layout/activity_main.xml" value="0.15092592592592594" />
+        <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/layout/activity_new_cost.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/layout/first_fragment.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/layout/recyclerview_item.xml" value="0.2" />
+        <entry key="..\:/Users/Home/Documents/Lessons/SomeNotes/app/src/main/res/layout/second_fragment.xml" value="0.36102564102564105" />
       </map>
     </option>
   </component>

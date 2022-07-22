@@ -13,7 +13,7 @@ class CostListAdapter: ListAdapter<CostsDb, CostViewHolder>(COST_COMPARATOR) {
 
     override fun onBindViewHolder(holder: CostViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.cost)
+        holder.bind(current.cost, current.price.toString())
     }
 
     companion object {
@@ -23,7 +23,7 @@ class CostListAdapter: ListAdapter<CostsDb, CostViewHolder>(COST_COMPARATOR) {
             }
 
             override fun areContentsTheSame(oldItem: CostsDb, newItem: CostsDb): Boolean {
-                return oldItem.cost == newItem.cost
+                return oldItem.cost == newItem.cost && oldItem.price == newItem.price
             }
         }
     }

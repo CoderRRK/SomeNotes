@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Тестовое</string>
-    <string name="hint_word">Список дел...</string>
+    <string name="hint_word">Статья затрат...</string>
+    <string name="hint_word2">Сумма...</string>
     <string name="button_save">Сохранить</string>
     <string name="empty_not_saved">Затраты не сохранены</string>
     <string name="add_word">Внести затрату</string>

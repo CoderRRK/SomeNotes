@@ -7,4 +7,5 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "cost_table")
 data class CostsDb(
     @PrimaryKey
-    @ColumnInfo(name = "cost") val cost: String)
+    @ColumnInfo(name = "cost") val cost: String, @ColumnInfo(name = "price") val price: Double
+)

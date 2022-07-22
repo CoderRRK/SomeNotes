@@ -1,16 +1,10 @@
 package android.coderrrk.somenotes.presentation
 
-
-
-
-
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import somenotes.R
 import somenotes.databinding.SecondFragmentBinding
-
 
 class SecondFragment:  Fragment(R.layout.second_fragment) {
     var liveDataString = MutableLiveData<String>()
@@ -20,8 +14,6 @@ class SecondFragment:  Fragment(R.layout.second_fragment) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = SecondFragmentBinding.inflate(layoutInflater)
-
-
 
 //        binding.setterLiveDataButton.setOnClickListener{
 //            binding.testText.setText(binding.setterLiveData.text.toString())

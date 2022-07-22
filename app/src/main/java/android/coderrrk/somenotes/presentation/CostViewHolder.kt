@@ -1,8 +1,6 @@
 package android.coderrrk.somenotes.presentation
 
 
-
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +12,11 @@ import somenotes.R
 class CostViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
     private val costItemView: TextView = itemView.findViewById(R.id.textView)
+    private val priceItemView: TextView = itemView.findViewById(R.id.textView2)
 
-    fun bind(text: String?) {
-        costItemView.text = text
+    fun bind(text1: String?, text2: String?) {
+        costItemView.text = text1
+        priceItemView.text = text2
     }
 
     companion object {

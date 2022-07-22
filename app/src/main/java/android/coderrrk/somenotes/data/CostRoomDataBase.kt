@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = [CostsDb::class], version = 5)
+@Database(entities = [CostsDb::class], version = 8)
 abstract class CostRoomDataBase : RoomDatabase() {
 
     abstract fun costDao(): CostDao
@@ -57,8 +57,7 @@ abstract class CostRoomDataBase : RoomDatabase() {
 
             costDao.deleteAll()
 
-            var cost = CostsDb("Job №1")
-            costDao.insert(cost)
+
 
         }
     }

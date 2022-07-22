@@ -7,13 +7,16 @@ class CostRepository(private val costDao: CostDao) {
 
     val allCosts: Flow<List<CostsDb>> = costDao.getAlphabetizedCosts()
 
+    val allPrice: Flow<List<Double>> = costDao.getAllPrice()
+
+
     @WorkerThread
     suspend fun insert(costDb: CostsDb) {
         costDao.insert(costDb)
     }
 
     @WorkerThread
-    suspend fun deleteAll(costDb: CostsDb) {
+    suspend fun deleteAll() {
         costDao.deleteAll()
     }
 
