@@ -3,7 +3,7 @@ package android.coderrrk.somenotes.data.sqlite
 import androidx.annotation.WorkerThread
 import kotlinx.coroutines.flow.Flow
 
-class CostRepositoryImpl(private val costDao: CostDao) {
+class CostRepository(private val costDao: CostDao) {
 
     val allCosts: Flow<List<CostsDb>> = costDao.getAlphabetizedCosts()
 

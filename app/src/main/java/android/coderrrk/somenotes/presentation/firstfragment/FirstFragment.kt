@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.viewModelScope
 import somenotes.R
 import java.lang.RuntimeException
 
@@ -29,13 +30,13 @@ class FirstFragment: Fragment(R.layout.first_fragment) {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerViewAdapter()
-
         updateSum()
 
         val fab: FloatingActionButton? = getView()?.findViewById(R.id.float_button)
         fab?.setOnClickListener {
             val intent = Intent(activity?.applicationContext, NewCostActivity::class.java)
             startActivityForResult(intent, newCostActivityRequestCode)
+            recyclerViewAdapter()
             updateSum()
         }
 
@@ -65,6 +66,8 @@ class FirstFragment: Fragment(R.layout.first_fragment) {
                 Log.d("Size1", "" + costDb.sum())
             }
         })
+        costViewModel.viewModelScope
+        costViewModel.allCosts
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -91,8 +94,6 @@ class FirstFragment: Fragment(R.layout.first_fragment) {
                 Toast.LENGTH_LONG
             ).show()
         }
-        recyclerViewAdapter()
-        updateSum()
     }
 }
 

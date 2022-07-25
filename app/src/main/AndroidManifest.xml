@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="somenotes">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name="android.coderrrk.somenotes.presentation.firstfragment.CostApplication"
         android:allowBackup="true"

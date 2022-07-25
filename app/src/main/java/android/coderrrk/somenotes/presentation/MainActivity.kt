@@ -4,6 +4,11 @@ import android.coderrrk.somenotes.presentation.firstfragment.FirstFragment
 import android.coderrrk.somenotes.presentation.secondfragment.SecondFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.MotionEvent
+import android.view.View
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import somenotes.R
 import somenotes.databinding.ActivityMainBinding
@@ -31,4 +36,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().addToBackStack(null).
         replace(R.id.container, fragment).commit()
     }
+
+
 }
