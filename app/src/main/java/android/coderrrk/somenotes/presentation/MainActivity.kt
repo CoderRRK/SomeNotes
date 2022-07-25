@@ -1,11 +1,12 @@
 package android.coderrrk.somenotes.presentation
 
+import android.coderrrk.somenotes.presentation.firstfragment.FirstFragment
+import android.coderrrk.somenotes.presentation.secondfragment.SecondFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import somenotes.R
 import somenotes.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         binding.firstButton.setOnClickListener {
             launchFragment(FirstFragment())
@@ -30,6 +30,5 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.popBackStack()
         supportFragmentManager.beginTransaction().addToBackStack(null).
         replace(R.id.container, fragment).commit()
-
     }
 }

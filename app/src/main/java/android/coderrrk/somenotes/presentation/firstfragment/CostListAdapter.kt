@@ -1,6 +1,6 @@
-package android.coderrrk.somenotes.presentation
+package android.coderrrk.somenotes.presentation.firstfragment
 
-import android.coderrrk.testfragment.data.CostsDb
+import android.coderrrk.somenotes.data.sqlite.CostsDb
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter

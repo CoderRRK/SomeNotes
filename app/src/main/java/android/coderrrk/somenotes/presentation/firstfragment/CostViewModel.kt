@@ -1,13 +1,11 @@
-package android.coderrrk.somenotes.presentation
+package android.coderrrk.somenotes.presentation.firstfragment
 
-import android.coderrrk.testfragment.data.CostDao
-import android.coderrrk.testfragment.data.CostRepository
-import android.coderrrk.testfragment.data.CostsDb
+import android.coderrrk.somenotes.data.sqlite.CostRepositoryImpl
+import android.coderrrk.somenotes.data.sqlite.CostsDb
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
-import java.lang.RuntimeException
 
-class CostViewModel (private val repository: CostRepository): ViewModel() {
+class CostViewModel (private val repository: CostRepositoryImpl): ViewModel() {
 
     val allCosts: LiveData<List<CostsDb>> = repository.allCosts.asLiveData()
 

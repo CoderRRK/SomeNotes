@@ -1,43 +1,51 @@
-package android.coderrrk.somenotes.presentation
+package android.coderrrk.somenotes.presentation.firstfragment
 
 import android.app.Activity
-
-import android.coderrrk.testfragment.data.CostsDb
-
+import android.coderrrk.somenotes.data.sqlite.CostsDb
 import android.content.Intent
-
 import android.os.Bundle
-import android.text.TextUtils.replace
 import android.util.Log
-
-
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-
 import androidx.fragment.app.Fragment
-
-
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
 import androidx.fragment.app.viewModels
 import somenotes.R
-import java.lang.Double
 import java.lang.RuntimeException
 
 class FirstFragment: Fragment(R.layout.first_fragment) {
 
     private val newCostActivityRequestCode = 1
+
     private val costViewModel: CostViewModel by viewModels {
-        MainViewModelFactory((activity?.application as CostApplication).repository)
+        CostViewModelFactory((activity?.application as CostApplication).repository)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        recyclerViewAdapter()
+
+        updateSum()
+
+        val fab: FloatingActionButton? = getView()?.findViewById(R.id.float_button)
+        fab?.setOnClickListener {
+            val intent = Intent(activity?.applicationContext, NewCostActivity::class.java)
+            startActivityForResult(intent, newCostActivityRequestCode)
+            updateSum()
+        }
+
+        val fab2: FloatingActionButton? = getView()?.findViewById(R.id.float_button2)
+        fab2?.setOnClickListener {
+            costViewModel.deleteAll()
+            }
+    }
+
+    fun recyclerViewAdapter(){
         val recyclerView: RecyclerView? = getView()?.findViewById(R.id.recyclerview)
         val adapter = CostListAdapter()
         recyclerView?.adapter = adapter
@@ -46,25 +54,16 @@ class FirstFragment: Fragment(R.layout.first_fragment) {
         costViewModel.allCosts.observe(viewLifecycleOwner, Observer { costDb ->
             costDb?.let { adapter.submitList(it) {} }
         })
-
-        val fab: FloatingActionButton? = getView()?.findViewById(R.id.float_button)
-        fab?.setOnClickListener {
-            val intent = Intent(activity?.applicationContext, NewCostActivity::class.java)
-            startActivityForResult(intent, newCostActivityRequestCode)
-        }
-
-        val fab2: FloatingActionButton? = getView()?.findViewById(R.id.float_button2)
-        fab2?.setOnClickListener {
-            costViewModel.deleteAll()
-            }
+    }
 
 
+    fun updateSum(){
         val sum: TextView? = getView()?.findViewById(R.id.column4)
         costViewModel.allSumPrice.observe(viewLifecycleOwner, Observer { costDb ->
             costDb?.let {
                 sum?.text = costDb.sum().toString() + " руб."
-                        Log.d("Size1", "" + costDb.sum())
-                }
+                Log.d("Size1", "" + costDb.sum())
+            }
         })
     }
 
@@ -92,8 +91,9 @@ class FirstFragment: Fragment(R.layout.first_fragment) {
                 Toast.LENGTH_LONG
             ).show()
         }
+        recyclerViewAdapter()
+        updateSum()
     }
-
 }
 
 

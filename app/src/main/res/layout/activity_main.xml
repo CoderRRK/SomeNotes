@@ -20,24 +20,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <Button
             android:id="@+id/first_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Список дел"
+            android:text="Список покупок"
             android:translationX="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container" />
-
 
             <Button
                 app:layout_constraintTop_toBottomOf="@id/container"
                 android:id="@+id/second_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:translationX="100dp"
-                android:text="Фрагмент №2"
+                android:translationX="65dp"
+                android:text="Расписание"
                 app:layout_constraintStart_toEndOf="@id/first_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

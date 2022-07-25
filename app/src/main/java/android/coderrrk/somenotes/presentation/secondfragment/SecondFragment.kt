@@ -1,4 +1,4 @@
-package android.coderrrk.somenotes.presentation
+package android.coderrrk.somenotes.presentation.secondfragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +14,19 @@ class SecondFragment:  Fragment(R.layout.second_fragment) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = SecondFragmentBinding.inflate(layoutInflater)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //        binding.setterLiveDataButton.setOnClickListener{
 //            binding.testText.setText(binding.setterLiveData.text.toString())

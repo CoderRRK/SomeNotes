@@ -1,8 +1,6 @@
-package android.coderrrk.somenotes.presentation
+package android.coderrrk.somenotes.presentation.firstfragment
 
 import android.app.Activity
-
-
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -10,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import somenotes.R
-
 
 //новый интент для добавления элемента
 class NewCostActivity: AppCompatActivity() {

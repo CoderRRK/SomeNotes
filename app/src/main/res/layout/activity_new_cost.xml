@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:hint="@string/hint_word2"
-        android:inputType="textAutoComplete"
+        android:inputType="numberDecimal"
         android:layout_margin="24dp"
         android:textSize="18sp" />
 

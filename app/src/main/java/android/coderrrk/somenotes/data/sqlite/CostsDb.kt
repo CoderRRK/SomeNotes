@@ -1,4 +1,4 @@
-package android.coderrrk.testfragment.data
+package android.coderrrk.somenotes.data.sqlite
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
